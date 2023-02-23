@@ -64,6 +64,7 @@ on:
           - 5.10.160_5.15.85
           - 5.15.85_6.1.1
           - 5.4.225
+          - 5.9.14
           - 5.10.160
           - 5.15.85
           - 6.1.1
@@ -75,7 +76,7 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "https://github.com/ophub/kernel/tree/main/pub"
+        default: "https://github.com/masjeho1/kernelll/tree/main/pub"
       armbian_size:
         description: "Set armbian rootfs size(Unit: MiB)."
         required: false
@@ -167,7 +168,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: masjeho2/amlogic-s9xxx-armbian@main
         if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
