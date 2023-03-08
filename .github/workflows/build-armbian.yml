@@ -76,7 +76,7 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "https://github.com/masjeho1/kernelll/tree/main/pub"
+        default: "https://github.com/masjeho2/kernelll/tree/main/pub"
       armbian_size:
         description: "Set armbian rootfs size(Unit: MiB)."
         required: false
