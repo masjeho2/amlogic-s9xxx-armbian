@@ -63,6 +63,7 @@ on:
           - 5.10.160
           - 5.15.85
           - 6.1.1
+          - 6.2.2
       auto_kernel:
         description: "Auto use the latest kernel."
         required: false
@@ -71,7 +72,7 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "https://github.com/ophub/kernel/tree/main/pub"
+        default: "https://github.com/masjeho2/kernelll/tree/main/pub"
       armbian_size:
         description: "Set armbian rootfs size(Unit: MiB)."
         required: false
@@ -148,7 +149,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: masjeho2/amlogic-s9xxx-armbian@main
         if: ${{ env.ARMBIAN_URL }} != '' && !cancelled()
         with:
           build_target: armbian
