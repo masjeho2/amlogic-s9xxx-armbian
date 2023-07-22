@@ -154,7 +154,7 @@ on:
         default: "masjeho2/kernelll"
         type: choice
         options:
-          - ophub/kernel
+          - masjeho2/kernelll
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
