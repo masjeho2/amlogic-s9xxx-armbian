@@ -151,7 +151,7 @@ on:
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "ophub/kernel"
+        default: "masjeho2/kernelll"
         type: choice
         options:
           - ophub/kernel
@@ -266,7 +266,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: masjeho2/amlogic-s9xxx-armbian@main
         if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
